@@ -1,6 +1,4 @@
 ---
-import { localizePath } from "astro-i18next";
-
 interface Props {
 	href: string;
 	size?: "xs" | "sm" | "md" | "lg";
@@ -30,7 +28,7 @@ const styles = {
 ---
 
 <a
-	href={href.startsWith("http") ? href : localizePath(href)}
+	href={href}
 	{...rest}
 	class:list={[
 		"rounded-md text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",

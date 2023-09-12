@@ -2,8 +2,6 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
-import { HeadHrefLangs } from "astro-i18next/components";
-import i18next from "i18next";
 import { pwaInfo } from "virtual:pwa-info";
 import "@fontsource-variable/inter";
 import { ViewTransitions } from "astro:transitions";
@@ -17,23 +15,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL("/meta/opengraph.png", Astro.site).toString();
 
-// replaced dynamically
-const buildDate = __DATE__;
+const { title } = Astro.props;
 
-const { title, lang = null } = Astro.props;
-
-const makeTitle = title ? title + " | " + "Astros" : "Astros - Starter Template for Astro with Tailwind CSS";
+const makeTitle = title ? title : "Nativo Digital";
 ---
 
 <!DOCTYPE html>
-<html lang={lang ?? i18next.language}>
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" content="#ffffff" />
-		<HeadHrefLangs />
 
 		<ViewTransitions />
 
@@ -48,7 +42,7 @@ const makeTitle = title ? title + " | " + "Astros" : "Astros - Starter Template 
 				basic: {
 					url: canonicalURL,
 					type: "website",
-					title: `Astros - Starter Template for Astro`,
+					title: `Nativo Digital`,
 					image: resolvedImageWithDomain,
 				},
 				image: {
@@ -61,7 +55,7 @@ const makeTitle = title ? title + " | " + "Astros" : "Astros - Starter Template 
 		<script src="/src/pwa.ts"></script>
 	</head>
 	<body class="dark:bg-stone-950">
-		<Navbar />
+		<!-- <Navbar /> -->
 		<slot />
 		<Footer />
 		<style is:global>

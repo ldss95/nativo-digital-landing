@@ -2,8 +2,6 @@
 // @ts-ignore
 import { Icon } from "astro-icon";
 import Link from "@components/ui/link.astro";
-import { localizePath } from "astro-i18next";
-import { t } from "i18next";
 
 const features = [
 	{
@@ -65,13 +63,14 @@ const features = [
 
 <div class="relative mx-auto max-w-5xl px-6 lg:px-8">
 	<div class="mx-auto max-w-2xl lg:text-center">
-		<h2 class="text-base font-semibold leading-7 text-black dark:text-white">{t("features.title")}</h2>
-		<p class="mt-2 text-3xl font-bold tracking-tight text-black dark:text-white sm:text-4xl">{t("features.subtitle")}</p>
+		<p class="mt-2 text-3xl font-bold tracking-tight text-black dark:text-white sm:text-4xl">Tu Solución a la Medida del Futuro</p>
 		<p class="mt-6 text-lg leading-8 text-gray-900 dark:text-gray-100">
-			{t("features.description")}
+			En Nativo Digital, estamos dedicados a materializar tus visiones tecnológicas más audaces. Nuestro equipo de expertos en desarrollo de software y soluciones digitales tiene una misión clara: convertir tus ideas en realidad.
+			Ya sea que necesites una aplicación innovadora, una plataforma personalizada o cualquier solución tecnológica que puedas imaginar,
+			estamos aquí para hacerlo posible.
 		</p>
 	</div>
-	<div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+	<!-- <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
 		<dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
 			{
 				features.map((item) => (
@@ -83,10 +82,10 @@ const features = [
 							{item.title}
 						</dt>
 						<dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-900 dark:text-gray-100">
-							<p class="flex-auto">{t(item.description)}</p>
+							<p class="flex-auto">item.description</p>
 							<p class="mt-6">
 								<Link href={item.url} style="muted" size="xs" class="leading-6 text-left text-black dark:text-white">
-									{t("features.learn_more")}{" "}
+									features.learn_more 
 									<span class="pl-1 text-black dark:text-white" aria-hidden="true">
 										→
 									</span>
@@ -97,5 +96,5 @@ const features = [
 				))
 			}
 		</dl>
-	</div>
+	</div> -->
 </div>

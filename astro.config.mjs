@@ -6,7 +6,6 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
 import rehypeSlug from "rehype-slug";
 import NetlifyCMS from "astro-netlify-cms";
-import astroI18next from "astro-i18next";
 import alpinejs from "@astrojs/alpinejs";
 import AstroPWA from "@vite-pwa/astro";
 
@@ -33,16 +32,10 @@ export default defineConfig({
 				},
 				media_folder: "public/images",
 				public_folder: "/images",
-				i18n: {
-					structure: "multiple_folders",
-					locales: ["en", "it"],
-					default_locale: "en",
-				},
 				collections: [
 					// Content collections
 					{
 						name: "posts",
-						i18n: true,
 						label: "Blog Posts",
 						folder: "src/content/blog",
 						create: true,
@@ -52,43 +45,36 @@ export default defineConfig({
 								name: "title",
 								widget: "string",
 								label: "Post Title",
-								i18n: true,
 							},
 							{
 								label: "Draft",
 								name: "draft",
 								widget: "boolean",
-								i18n: "duplicate",
 							},
 							{
 								label: "Author",
 								name: "author",
 								widget: "string",
-								i18n: "duplicate",
 							},
 							{
 								label: "Tags",
 								name: "tags",
 								widget: "list",
-								i18n: true,
 							},
 							{
 								label: "Image",
 								name: "image",
 								widget: "object",
-								i18n: true,
 								fields: [
 									{
 										label: "Source",
 										name: "src",
 										widget: "image",
-										i18n: "duplicate",
 									},
 									{
 										label: "Alt Text",
 										name: "alt",
 										widget: "string",
-										i18n: true,
 									},
 								],
 							},
@@ -96,27 +82,23 @@ export default defineConfig({
 								label: "Snippet",
 								name: "snippet",
 								widget: "text",
-								i18n: true,
 							},
 							{
 								label: "Publish Date",
 								name: "publishDate",
 								widget: "datetime",
 								format: "YYYY-MM-DD HH:mm",
-								i18n: "duplicate",
 							},
 							{
 								label: "Category",
 								name: "category",
 								widget: "select",
 								options: ["Tutorials", "News", "Reviews", "Frameworks"],
-								i18n: "duplicate",
 							},
 							{
 								name: "body",
 								widget: "markdown",
 								label: "Post Body",
-								i18n: true,
 							},
 						],
 					},
@@ -124,7 +106,6 @@ export default defineConfig({
 			},
 			disableIdentityWidgetInjection: true,
 		}),
-		astroI18next(),
 		alpinejs(),
 		AstroPWA({
 			mode: "production",
@@ -133,7 +114,7 @@ export default defineConfig({
 			includeAssets: ["favicon.svg"],
 			registerType: "autoUpdate",
 			manifest: {
-				name: "Astros - Starter Template for Astro with Tailwind CSS",
+				name: "Nativo Digital",
 				short_name: "Astros",
 				theme_color: "#ffffff",
 				icons: [

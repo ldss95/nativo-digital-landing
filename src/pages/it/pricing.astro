@@ -1,13 +1,9 @@
 ---
-import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Pricing from "@components/pricing.astro";
-import Logos from "@components/logos.astro";
 import Faq from "@components/faq.astro";
-
-changeLanguage("it");
 
 const pricingData = [
     {
@@ -66,6 +62,6 @@ const pricingData = [
 			{pricingData.map((item) => <Pricing plan={item} />)}
 		</div>
 		<!-- <Logos /> -->
-		<Faq />
+		<!-- <Faq /> -->
 	</Container>
 </Layout>

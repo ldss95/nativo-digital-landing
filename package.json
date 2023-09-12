@@ -25,7 +25,6 @@
 		"@types/alpinejs": "^3.7.2",
 		"alpinejs": "^3.12.3",
 		"astro": "^2.10.4",
-		"astro-i18next": "^1.0.0-beta.21",
 		"astro-icon": "^0.8.1",
 		"astro-netlify-cms": "^0.5.3",
 		"astro-seo": "^0.7.5",
@@ -41,8 +40,8 @@
 		"@tailwindcss/typography": "^0.5.9",
 		"@vite-pwa/assets-generator": "^0.0.4",
 		"@vite-pwa/astro": "^0.1.1",
-		"prettier-plugin-astro": "^0.11.0",
 		"prettier": "3.0.1",
+		"prettier-plugin-astro": "^0.11.0",
 		"rehype": "^12.0.1",
 		"sharp": "^0.32.4",
 		"workbox-window": "^7.0.0"

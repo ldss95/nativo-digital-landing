@@ -1,5 +1,4 @@
 ---
-import i18next, { changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
@@ -7,16 +6,14 @@ import Posts from "@components/blog/posts.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Pagination from "@components/blog/pagination.astro";
 
-changeLanguage("en");
-
-export async function getStaticPaths({ paginate }) {changeLanguage('en')
+export async function getStaticPaths({ paginate }) {
     var posts = await getCollection("blog", ({ data }) => {
         return !data.draft;
     });
     // Preprocess the posts to split the slugs and get the languages
     var processedPosts = posts.map((post) => {
         const [...slug] = post.slug.split("/");
-        let lang = i18next.language;
+        let lang = "es";
         var firstSlug = post.slug.match(/^([^\/]*)\//);
         if (firstSlug) {
             lang = firstSlug[1];
@@ -28,7 +25,7 @@ export async function getStaticPaths({ paginate }) {changeLanguage('en')
         };
     });
     // Filter posts based on the current language
-    const localizedPosts = processedPosts.filter((post) => post.lang === i18next.language);
+    const localizedPosts = processedPosts.filter((post) => post.lang === "es");
     localizedPosts.sort(function (a, b) {
         return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
     });
